@@ -1213,7 +1213,7 @@
   </style>
 </head>
 
-<body class="font-sans bg-gray-50 text-gray-800">
+<body class="font-sans bg-gray-50 text-gray-800 overflow-x-hidden">
   <!-- Navigation -->
   <nav class="bg-white shadow-md sticky top-0 z-50">
     <div class="container mx-auto px-4 md:px-6 lg:px-8">
@@ -1760,7 +1760,7 @@
             untuk memberikan hasil terbaik dengan kualitas premium dan harga yang kompetitif. Kepuasan klien adalah
             prioritas utama kami.</p>
 
-          <div class="grid grid-cols-2 gap-6 mb-8">
+          <div class="grid md:grid-cols-2 gap-6 mb-8">
             <div class="flex items-center">
               <div class="bg-secondary bg-opacity-10 p-3 rounded-full mr-4">
                 <svg class="w-6 h-6 text-secondary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -1843,11 +1843,11 @@
                 </div>
               </div>
             </div>
-            <div class="absolute -bottom-5 -left-5 bg-secondary text-white p-4 rounded-lg shadow-lg">
+            <div class="absolute -bottom-5 -left-1 md:-left-5 bg-secondary text-white p-4 rounded-lg shadow-lg">
               <p class="font-bold">10+ Tahun</p>
               <p class="text-sm">Pengalaman</p>
             </div>
-            <div class="absolute -top-5 -right-5 bg-primary text-white p-4 rounded-lg shadow-lg">
+            <div class="absolute -top-5 -right-1 md:-right-5 bg-primary text-white p-4 rounded-lg shadow-lg">
               <p class="font-bold">500+</p>
               <p class="text-sm">Proyek Selesai</p>
             </div>
@@ -2111,6 +2111,22 @@
       const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
 
       window.open(whatsappURL, "_blank");
+    });
+
+    const menuButton = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    // Toggle menu saat tombol diklik
+    menuButton.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    // Tutup menu saat salah satu link diklik
+    const menuLinks = mobileMenu.querySelectorAll("a");
+    menuLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+      });
     });
   </script>
 </body>
