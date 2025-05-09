@@ -2106,13 +2106,15 @@
         return;
       }
 
+      const whatsappNumber = '6289612980619'
       const text = `Halo, saya *${name}*.\nSaya tertarik dengan layanan *${service}*.\n\n${message}`;
       const encodedText = encodeURIComponent(text);
       const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
 
       window.open(whatsappURL, "_blank");
     });
-
+  </script>
+  <script>
     const menuButton = document.getElementById("mobile-menu-button");
     const mobileMenu = document.getElementById("mobile-menu");
 
