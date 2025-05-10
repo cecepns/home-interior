@@ -1843,19 +1843,16 @@
             <div class="bg-white p-4 rounded-lg shadow-xl">
               <div class="grid grid-cols-2 gap-4">
                 <div class="bg-gray-300 h-48 rounded-lg flex items-center justify-center overflow-hidden">
-                  <img src="img/tentang-banner.jpg" alt="tentang-1" class="w-full h-full object-cover object-center" />
+                  <img src="img/about/1.jpeg" alt="tentang-1" class="w-full h-full object-cover object-center" />
                 </div>
                 <div class="bg-gray-300 h-48 rounded-lg flex items-center justify-center overflow-hidden">
-                  <img src="img/tentang-banner-3.jpg" alt="tentang-1"
-                    class="w-full h-full object-cover object-center" />
+                  <img src="img/about/2.jpeg" alt="tentang-1" class="w-full h-full object-cover object-center" />
                 </div>
                 <div class="bg-gray-300 h-48 rounded-lg flex items-center justify-center overflow-hidden">
-                  <img src="img/tentang-banner-2.jpg" alt="tentang-1"
-                    class="w-full h-full object-cover object-center" />
+                  <img src="img/about/3.jpeg" alt="tentang-1" class="w-full h-full object-cover object-center" />
                 </div>
                 <div class="bg-gray-300 h-48 rounded-lg flex items-center justify-center overflow-hidden">
-                  <img src="img/tentang-banner-4.jpg" alt="tentang-1"
-                    class="w-full h-full object-cover object-center" />
+                  <img src="img/about/4.jpeg" alt="tentang-1" class="w-full h-full object-cover object-center" />
                 </div>
               </div>
             </div>
@@ -1905,8 +1902,8 @@
               </svg>
             </div>
             <div>
-              <h4 class="font-bold text-primary">Budi Santoso</h4>
-              <p class="text-gray-500 text-sm">Jakarta Selatan</p>
+              <h4 class="font-bold text-primary">Ibu Tia</h4>
+              <p class="text-gray-500 text-sm">Sumberjo</p>
             </div>
           </div>
         </div>
@@ -1934,8 +1931,8 @@
               </svg>
             </div>
             <div>
-              <h4 class="font-bold text-primary">Siti Rahayu</h4>
-              <p class="text-gray-500 text-sm">Bandung</p>
+              <h4 class="font-bold text-primary">Agus Setiawan</h4>
+              <p class="text-gray-500 text-sm">Ganjaran</p>
             </div>
           </div>
         </div>
@@ -1963,8 +1960,8 @@
               </svg>
             </div>
             <div>
-              <h4 class="font-bold text-primary">Ahmad Hidayat</h4>
-              <p class="text-gray-500 text-sm">Surabaya</p>
+              <h4 class="font-bold text-primary">Haji Yanto</h4>
+              <p class="text-gray-500 text-sm">Malang</p>
             </div>
           </div>
         </div>
@@ -2111,9 +2108,20 @@
         </div>
       </div>
     </div>
+    <button id="whatsappButton"
+      class="fixed bottom-4 right-4 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg flex items-center justify-center z-50"
+      aria-label="Contact via WhatsApp">
+      <!-- WhatsApp Icon SVG -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+        <path
+          d="M12.002 2.002c-5.515 0-9.998 4.482-9.998 9.998 0 1.763.46 3.472 1.34 4.985l-1.38 5.045 5.168-1.355c1.459.803 3.108 1.225 4.87 1.225 5.516 0 9.998-4.482 9.998-9.998s-4.482-9.998-9.998-9.998zm0 18.331c-1.541 0-3.04-.416-4.351-1.203l-.312-.184-3.064.803.827-2.994-.201-.318c-.831-1.314-1.27-2.83-1.27-4.355 0-4.66 3.793-8.453 8.453-8.453 4.66 0 8.453 3.793 8.453 8.453s-3.793 8.453-8.453 8.453zm4.97-6.235c-.251-.125-1.482-.731-1.71-.814-.228-.084-.393-.125-.559.125-.166.25-.64.813-.783.979-.143.166-.29.187-.54.062-.25-.125-1.053-.387-2.006-1.234-.741-.66-1.24-1.474-1.386-1.724-.144-.25-.015-.385.108-.51.111-.11.25-.29.374-.435.125-.145.166-.25.25-.416.083-.166.042-.312-.021-.437-.063-.125-.559-1.345-.766-1.84-.202-.485-.409-.42-.559-.428-.145-.008-.312-.01-.478-.01-.166 0-.437.063-.666.312s-.874.854-.874 2.084c0 1.229.894 2.416 1.018 2.583.125.167 1.758 2.688 4.264 3.77.596.256 1.062.408 1.424.522.598.19 1.144.163 1.576.099.48-.072 1.482-.605 1.691-1.19.208-.584.208-1.084.146-1.19-.062-.104-.228-.167-.48-.291z" />
+      </svg>
+    </button>
   </section>
 
   <script>
+    const whatsappNumber = '6289612980619'
+
     document.querySelector("form").addEventListener("submit", function (e) {
       e.preventDefault();
 
@@ -2126,12 +2134,19 @@
         return;
       }
 
-      const whatsappNumber = '6289612980619'
       const text = `Halo, saya *${name}*.\nSaya tertarik dengan layanan *${service}*.\n\n${message}`;
       const encodedText = encodeURIComponent(text);
       const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
 
       window.open(whatsappURL, "_blank");
+    });
+
+    const whatsappButton = document.getElementById("whatsappButton");
+    const message = "Halo, saya ingin bertanya"; // Pesan default
+
+    whatsappButton.addEventListener("click", () => {
+      const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank");
     });
   </script>
   <script>
